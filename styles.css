@@ -1038,3 +1038,467 @@ img[loading="lazy"].loaded {
         padding: 1.5rem;
     }
 }
+/* Final Download Section */
+.final-download-section {
+    background: var(--gradient-primary);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+.final-download-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.final-download-section h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.final-download-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.final-download-section .download-btn {
+    background: white;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid transparent;
+}
+
+.final-download-section .download-btn:hover {
+    background: var(--background-dark);
+    color: white;
+    border-color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.download-note {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-top: 1rem !important;
+    font-style: italic;
+}
+
+/* Mobile Responsive for Final Download */
+@media (max-width: 768px) {
+    .final-download-section {
+        padding: 3rem 0;
+    }
+    
+    .final-download-section h2 {
+        font-size: 2rem;
+    }
+    
+    .final-download-section p {
+        font-size: 1rem;
+    }
+    
+    .final-download-section .download-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .final-download-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .final-download-section .download-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+/* Jump to Download Button */
+.jump-to-download {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.jump-download-btn {
+    background: linear-gradient(135deg, var(--primary-color), #f7931e);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-card);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jump-download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.jump-download-btn:hover::before {
+    left: 100%;
+}
+
+.jump-download-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, #ff8c5a, #ffb347);
+}
+
+.jump-icon {
+    font-size: 1.2rem;
+    animation: jumpBounce 2s infinite;
+}
+
+@keyframes jumpBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Pulse effect for jump button */
+.jump-download-btn {
+    animation: jumpPulse 3s infinite;
+}
+
+@keyframes jumpPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+    }
+}
+
+/* Mobile Responsive for Jump Button */
+@media (max-width: 768px) {
+    .jump-download-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .jump-download-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+/* Second Task Section */
+.second-task-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(228, 64, 95, 0.1), rgba(131, 58, 180, 0.1));
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(228, 64, 95, 0.3);
+    animation: slideInUp 0.5s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-header h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.task-header p {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.instagram-link-section {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.like-post-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);
+    color: white;
+    text-decoration: none;
+    padding: 2rem 4rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    transition: var(--transition);
+    box-shadow: 0 15px 35px rgba(228, 64, 95, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 400px;
+    text-align: center;
+}
+
+.like-post-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.like-post-btn:hover::before {
+    left: 100%;
+}
+
+.like-post-btn:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 25px 50px rgba(228, 64, 95, 0.6);
+    background: linear-gradient(135deg, #ff4d6d, #d63384, #9c4dcc);
+}
+
+.like-icon {
+    font-size: 2rem;
+    animation: heartBeat 2s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 50%, 100% {
+        transform: scale(1);
+    }
+    25%, 75% {
+        transform: scale(1.2);
+    }
+}
+
+.download-ready-section {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(56, 142, 60, 0.1));
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    animation: slideInUp 0.5s ease;
+}
+
+.download-ready-header h4 {
+    color: #4CAF50;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.download-ready-header p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.final-download-button-section {
+    margin-top: 1.5rem;
+}
+
+.final-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049, #388e3c);
+    color: white;
+    border: none;
+    padding: 2rem 4rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    transition: var(--transition);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-download-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.final-download-button:hover::before {
+    left: 100%;
+}
+
+.final-download-button:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 25px 50px rgba(76, 175, 80, 0.6);
+    background: linear-gradient(135deg, #66bb6a, #4caf50, #43a047);
+}
+
+.download-icon-final {
+    font-size: 2rem;
+    animation: finalDownloadBounce 2s infinite;
+}
+
+@keyframes finalDownloadBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Pulse effect for final download button */
+.final-download-button {
+    animation: finalDownloadPulse 3s infinite;
+}
+
+@keyframes finalDownloadPulse {
+    0% {
+        box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4), 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4), 0 0 0 15px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4), 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+/* Mobile Responsive for Download Ready Section */
+@media (max-width: 768px) {
+    .download-ready-section {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .final-download-button {
+        padding: 1.5rem 2.5rem;
+        font-size: 1.4rem;
+        min-width: 300px;
+        border-radius: 15px;
+    }
+    
+    .download-icon-final {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-ready-header h4 {
+        font-size: 1.2rem;
+    }
+    
+    .download-ready-header p {
+        font-size: 1rem;
+    }
+    
+    .final-download-button {
+        padding: 1.2rem 2rem;
+        font-size: 1.2rem;
+        min-width: 250px;
+        letter-spacing: 1px;
+    }
+    
+    .download-icon-final {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile Responsive for Second Task */
+@media (max-width: 768px) {
+    .second-task-section {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .like-post-btn {
+        padding: 1.5rem 2.5rem;
+        font-size: 1.4rem;
+        min-width: 300px;
+        border-radius: 15px;
+    }
+    
+    .like-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .like-post-btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.2rem;
+        min-width: 250px;
+        letter-spacing: 1px;
+    }
+    
+    .like-icon {
+        font-size: 1.3rem;
+    }
+}

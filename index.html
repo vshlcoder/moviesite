@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLC6VVVRFR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-QLC6VVVRFR');
+    </script>
     <title>Download Dhurandhar Movie (2025) - New Movie | Movie4u, Movieflix | Ranveer Singh, Akshaye Khanna</title>
     <meta name="description" content="Download Dhurandhar (2025) new movie starring Ranveer Singh, Akshaye Khanna. Latest bollywood movie download, box office collection, cast details, OTT release. Movie4u, Movieflix quality. IMDb 8.5/10.">
     <meta name="keywords" content="download dhurandhar, dhurandhar download, new movie, movie4u, movieflix, dhurandhar box office collection, akshaye khanna, dhurandhar cast, dhurandhar collection, durandar, aditya dhar, dhurandhar ott release, durandhar, dhurandhar ott release date, dhurandhar movie duration, hrithik roshan, ranveer singh new movies, saba azad, dhurandhar movie collection, dhurandhar imdb, dhurandhar film, ranveer singh, dhurandhar collection day 1, major iqbal, dhurandhar ott, aditya dhar movies, dhurandar cast, ajay sanyal, hamza ali mazari, dhurandhar 2, dhurandhar rating, dhurandhar bookmyshow, akshaye khanna movies, dhurandhar imdb rating, dhurandhar director, ranveer singh dhurandhar, dhurandhar movies, dhurandhar movie ranveer singh, deepika padukone, dhurandhar movie release date, dhurandhar sacnilk, dhurandar movie, dhurandhar ranveer singh, akshay kumar, akshaye khanna new movie, cast of dhurandhar, dhurandhar movie time, dhurandhar real characters, dhurandhar movie cast, bollywood, dhurandhar real story, dhurandhar real character, lyari, major mohit sharma wife, ranbir kapoor, arjun rampal, mohit sharma spy, major mohit sharma dhurandhar, dhurandhar post credit scene, dhurandhar box office collection day 4, dhurandhar first day box office, lyari gang war, dhurandhar box office collection worldwide total, film, dhurandar review, ranveer singh movies, dhurandhar day 3 collection sacnilk, bollywood box office collection, bms, post credit scene in dhurandhar, dhurandhar day 2 collection sacnilk, office, dhurandhar movie budget, animal, box, dhurandhar 1st day collection, akshay khanna, jaskirat singh rangi real story, download dhurandhar movie, dhurandhar movie download, new bollywood movie, latest movie download, movie4u dhurandhar, movieflix dhurandhar, free movie download, hindi movie download, 2025 new movie, bollywood new release">
@@ -157,12 +167,6 @@
                     <span class="rating-badge rt">Rotten Tomatoes: 50%</span>
                     <span class="rating-badge google">Google Users: 94%</span>
                 </div>
-                <div class="download-section">
-                    <button id="downloadBtn" class="download-btn">
-                        <span class="download-icon">⬇</span>
-                        Download Dhurandhar Movie
-                    </button>
-                </div>
             </div>
         </section>
 
@@ -195,6 +199,13 @@
                         
                         <h3>Movie4u & Movieflix Quality Download</h3>
                         <p>Get Dhurandhar movie download in high quality from Movie4u and Movieflix platforms. This new Bollywood movie starring Ranveer Singh is available for download in multiple formats and resolutions.</p>
+                        
+                        <div class="jump-to-download">
+                            <button id="jumpToDownloadBtn" class="jump-download-btn">
+                                <span class="jump-icon">⬇</span>
+                                Jump to Download
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -396,6 +407,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- Download Section at End -->
+        <section id="download-section" class="final-download-section">
+            <div class="container">
+                <div class="final-download-content">
+                    <h2>Ready to Download Dhurandhar?</h2>
+                    <p>Get the latest Bollywood movie starring Ranveer Singh and Akshaye Khanna</p>
+                    <div class="download-section">
+                        <button id="downloadBtn" class="download-btn">
+                            <span class="download-icon">⬇</span>
+                            Download Dhurandhar Movie
+                        </button>
+                    </div>
+                    <p class="download-note">High Quality • Movie4u & Movieflix • Free Download</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -416,18 +444,47 @@
             <button class="popup-close" id="closePopup">&times;</button>
             <div class="popup-header">
                 <h3>Download Dhurandhar Movie</h3>
-                <p>Please follow this profile on Instagram to download your movie</p>
+                <p>Instagram tab opened! Please follow the profile to download your movie</p>
             </div>
             <div class="instagram-profile-section">
                 <div class="instagram-icon-large">📷</div>
-                <h4>Follow Instagram Profile</h4>
-                <p>You will be redirected automatically after countdown</p>
+                <h4>Instagram Tab Opened</h4>
+                <p>Check the new tab and follow the profile. Download will be ready soon!</p>
             </div>
             <div class="countdown-section">
                 <div class="countdown-circle">
                     <span id="countdownTimer">0/10</span>
                 </div>
-                <p>Redirecting in <span id="countdownText">0/10</span> seconds</p>
+                <p>Processing download <span id="countdownText">0/10</span></p>
+            </div>
+            
+            <!-- Second Task Section (Hidden Initially) -->
+            <div class="second-task-section" id="secondTaskSection" style="display: none;">
+                <div class="task-header">
+                    <h4>Almost Done! One More Step</h4>
+                    <p>Click on this link and like the Instagram post</p>
+                </div>
+                <div class="instagram-link-section">
+                    <a href="https://www.instagram.com/p/DQ1DM85DLPt/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" 
+                       target="_blank" 
+                       class="like-post-btn"
+                       id="likePostBtn">
+                        <span class="like-icon">❤️</span>
+                        Click Here & Like the Post
+                    </a>
+                </div>
+                <div class="download-ready-section" id="downloadReadySection" style="display: none;">
+                    <div class="download-ready-header">
+                        <h4>Great! Now Download Your Movie</h4>
+                        <p>Click the button below to start your movie download</p>
+                    </div>
+                    <div class="final-download-button-section">
+                        <button id="finalDownloadBtn" class="final-download-button">
+                            <span class="download-icon-final">⬇</span>
+                            Download Your Movie
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

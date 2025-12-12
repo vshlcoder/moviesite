@@ -216,13 +216,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const closePopup = document.getElementById('closePopup');
     const countdownTimer = document.getElementById('countdownTimer');
     const countdownText = document.getElementById('countdownText');
-
+    const secondTaskSection = document.getElementById('secondTaskSection');
+    const secondCountdownTimer = document.getElementById('secondCountdownTimer');
+    const secondCountdownText = document.getElementById('secondCountdownText');
+    const likePostBtn = document.getElementById('likePostBtn');
+    const finalDownloadBtn = document.getElementById('finalDownloadBtn');
 
     let countdownInterval;
     let currentCount = 0;
 
     // Download button click event
     downloadBtn.addEventListener('click', function() {
+        // Open Instagram link immediately in new tab
+        window.open('https://www.instagram.com/p/DSBMMuQk-Dp/?img_index=1&igsh=NW5jZXZ2aHg1emg4', '_blank');
+        
+        // Then open the countdown popup on main page
         openDownloadPopup();
     });
 
@@ -239,6 +247,42 @@ document.addEventListener('DOMContentLoaded', function() {
             closeDownloadPopup();
         }
     });
+
+    // Like post button click event
+    if (likePostBtn) {
+        likePostBtn.addEventListener('click', function() {
+            // Open Instagram post in new tab
+            window.open('https://www.instagram.com/p/DQ1DM85DLPt/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ%3D%3D', '_blank');
+            
+            // Add visual feedback when user clicks
+            this.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            this.innerHTML = '<span class="like-icon">✓</span> Instagram Opened! Please Like the Post';
+            this.style.pointerEvents = 'none'; // Disable further clicks
+            
+            // Show download ready section after a short delay
+            setTimeout(() => {
+                showDownloadReady();
+            }, 2000);
+        });
+    }
+
+    // Final download button click event
+    if (finalDownloadBtn) {
+        finalDownloadBtn.addEventListener('click', function() {
+            // Add visual feedback
+            this.style.background = 'linear-gradient(135deg, #2196F3, #1976D2)';
+            this.innerHTML = '<span class="download-icon-final">⏳</span> Preparing Download...';
+            this.style.pointerEvents = 'none';
+            
+            // Here you can add the next step functionality
+            console.log('Final download button clicked - ready for next instructions');
+            
+            // Placeholder for next step - you can tell me what should happen here
+            setTimeout(() => {
+                alert('Ready for next step! Please tell me what should happen when user clicks Download Your Movie button.');
+            }, 1500);
+        });
+    }
 
 
 
@@ -273,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (currentCount >= 10) {
                 clearInterval(countdownInterval);
-                redirectToInstagram();
+                completeCountdown();
             }
         }, 1000);
     }
@@ -284,23 +328,65 @@ document.addEventListener('DOMContentLoaded', function() {
         currentCount = 0;
         countdownTimer.textContent = `${currentCount}/10`;
         countdownText.textContent = `${currentCount}/10`;
+        
+        // Reset visibility
+        document.querySelector('.countdown-section').style.display = 'block';
+        document.querySelector('.instagram-profile-section').style.display = 'block';
+        secondTaskSection.style.display = 'none';
+        document.querySelector('.instagram-link-section').style.display = 'block';
+        document.getElementById('downloadReadySection').style.display = 'none';
+        
+        // Reset text content
+        document.querySelector('.countdown-section p').textContent = 'Processing download 0/10';
+        
+        // Reset like button
+        if (likePostBtn) {
+            likePostBtn.style.background = 'linear-gradient(135deg, #E4405F, #C13584, #833AB4)';
+            likePostBtn.innerHTML = '<span class="like-icon">❤️</span> Click Here & Like the Post';
+            likePostBtn.style.pointerEvents = 'auto';
+        }
+        
+        // Reset final download button
+        if (finalDownloadBtn) {
+            finalDownloadBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049, #388e3c)';
+            finalDownloadBtn.innerHTML = '<span class="download-icon-final">⬇</span> Download Your Movie';
+            finalDownloadBtn.style.pointerEvents = 'auto';
+        }
     }
 
-    // Redirect to Instagram function
-    function redirectToInstagram() {
+    // Complete first countdown function
+    function completeCountdown() {
         // Play success sound (optional)
         playSuccessSound();
         
-        // Show redirect message
+        // Show completion message
         countdownTimer.textContent = "✓";
         countdownText.textContent = "10/10";
-        document.querySelector('.countdown-section p').textContent = "Redirecting now...";
+        document.querySelector('.countdown-section p').textContent = "First step complete!";
         
-        // Close popup and redirect after a short delay
+        // Hide first countdown section and show second task
         setTimeout(() => {
-            closeDownloadPopup();
-            window.open('https://www.instagram.com/p/DSBMMuQk-Dp/?img_index=1&igsh=NW5jZXZ2aHg1emg4', '_blank');
-        }, 1000);
+            document.querySelector('.countdown-section').style.display = 'none';
+            document.querySelector('.instagram-profile-section').style.display = 'none';
+            secondTaskSection.style.display = 'block';
+            startSecondCountdown();
+        }, 1500);
+    }
+
+    // Show second task (no countdown)
+    function startSecondCountdown() {
+        // Just show the second task, no countdown needed
+        // The completion will be triggered when user clicks the like button
+    }
+
+    // Show download ready section
+    function showDownloadReady() {
+        // Play success sound (optional)
+        playSuccessSound();
+        
+        // Hide the like button section and show download ready section
+        document.querySelector('.instagram-link-section').style.display = 'none';
+        document.getElementById('downloadReadySection').style.display = 'block';
     }
 
     // Play success sound function (optional)
@@ -410,3 +496,58 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(loadingStyle);
 });
+// Jump to Download Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const jumpToDownloadBtn = document.getElementById('jumpToDownloadBtn');
+    const downloadSection = document.getElementById('download-section');
+
+    if (jumpToDownloadBtn && downloadSection) {
+        jumpToDownloadBtn.addEventListener('click', function() {
+            // Smooth scroll to download section
+            downloadSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+
+            // Add a highlight effect to the download section
+            downloadSection.style.animation = 'highlightSection 2s ease';
+            
+            // Remove animation after it completes
+            setTimeout(() => {
+                downloadSection.style.animation = '';
+            }, 2000);
+
+            // Optional: Track jump to download clicks
+            console.log('User jumped to download section');
+        });
+
+        // Add hover effect with sound (optional)
+        jumpToDownloadBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+
+        jumpToDownloadBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    }
+});
+
+// Add CSS for highlight animation
+const jumpStyle = document.createElement('style');
+jumpStyle.textContent = `
+    @keyframes highlightSection {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+        }
+        50% {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+        }
+    }
+`;
+document.head.appendChild(jumpStyle);
